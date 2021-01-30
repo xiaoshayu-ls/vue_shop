@@ -137,7 +137,7 @@ export default {
         return this.$message.error('获取角色列表失败')
       }
       this.rolesList = res.data
-      console.log(this.getRolesList)
+      console.log(this.rolesList)
     },
     //监听添加角色对话框的关闭事件
     addDialogClosed() {
@@ -176,7 +176,7 @@ export default {
         if (!valid) return false
         const { data: res } = await this.$http.put(`roles/${this.editForm.id}`, { roleName: this.editForm.roleName, roleDesc: this.editForm.roleDesc })
         if (res.meta.status !== 200) {
-          return this.message.error('更新用户信息失败')
+          return this.$message.error('更新用户信息失败')
         }
         //关闭编辑框
         this.editDialogRoles = false
@@ -187,7 +187,7 @@ export default {
       })
     },
     //删除角色
-    async removeUserById(id) {
+    async removeUserById(role, rightId) {
       const confirmResult = await this.$confirm('此操作将永久删除该用户，是否删除？', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
@@ -198,7 +198,7 @@ export default {
         return this.$message.info('已取消删除')
       }
       //确认删除
-      const { data: res } = await this.$http.delete('users/' + id)
+      const { data: res } = await this.$http.delete(`roles/${role.id}/rights/${rightId}`)
       if (res.meta.status !== 200) {
         return this.$message.error('删除角色失败')
       }
