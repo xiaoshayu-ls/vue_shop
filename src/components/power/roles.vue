@@ -11,7 +11,7 @@
       <!-- 添加角色按钮 -->
       <el-row>
         <el-col>
-          <el-button type="primary">添加角色</el-button>
+          <el-button type="primary" @click="addDialogRoles = true">添加角色</el-button>
         </el-col>
       </el-row>
       <!-- 角色列表区域 -->
@@ -28,14 +28,60 @@
         </el-table-column>
       </el-table>
     </el-card>
+
+    <!-- 添加角色的对话框 -->
+    <el-dialog title="添加角色" :visible.sync="addDialogRoles" width="50%" @close="addDialogClosed">
+      <!-- 内容主体区域 -->
+      <el-form :model="addForm" :rules="addFormRules" ref="addFormRef" label-width="70px">
+        <el-form-item label="角色名称" prop="roleName">
+          <el-input v-model="addForm.roleName"></el-input>
+        </el-form-item>
+        <el-form-item label="角色描述" prop="roleDesc">
+          <el-input v-model="addForm.roleDesc"></el-input>
+        </el-form-item>
+      </el-form>
+      <!-- 底部区域 -->
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="addDialogRoles = false">取 消</el-button>
+        <el-button type="primary" @click="addRoles">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
+      queryInfo: {
+        query: ''
+      },
       // 所有角色列表
-      rolesList: []
+      rolesList: [],
+      addDialogRoles: false,
+      addForm: {
+        roleName: '',
+        roleDesc: ''
+      },
+      addFormRules: {
+        roleName: [
+          { required: true, message: '请输入角色名称', trigger: 'blur' },
+          {
+            min: 3,
+            max: 10,
+            message: '用户名的长度在3~10个字符之间',
+            trigger: 'blur'
+          }
+        ],
+        roleDesc: [
+          { required: true, message: '请输入角色描述', trigger: 'blur' },
+          {
+            min: 3,
+            max: 10,
+            message: '用户名的长度在3~10个字符之间',
+            trigger: 'blur'
+          }
+        ]
+      }
     }
   },
   created() {
@@ -49,6 +95,23 @@ export default {
       }
       this.rolesList = res.data
       console.log(this.getRolesList)
+    },
+    //监听添加角色对话框的关闭事件
+    addDialogClosed() {
+      this.$refs.addFormRef.resetFields()
+    },
+    //点击按钮，添加新角色
+    addRoles() {
+      this.$refs.addFormRef.validate(async (valid) => {
+        if (!valid) return
+        const { data: res } = await this.$http.post('roles', this.addForm)
+        if (res.meta.status !== 201) {
+          this.$message.error('添加角色失败')
+        }
+        this.$message.success('添加角色成功')
+        this.addDialogRoles = false
+        this.getRolesList()
+      })
     }
   }
 }
