@@ -1,0 +1,142 @@
+{
+  "id": "2169052",
+  "name": "小鲨鱼",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1046541",
+      "name": "订单管理",
+      "font_class": "weibiaoti3",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    },
+    {
+      "icon_id": "17253618",
+      "name": "数据统计",
+      "font_class": "xitongguanli",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "18960659",
+      "name": "商品管理",
+      "font_class": "shangpinguanli",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "15341997",
+      "name": "权限",
+      "font_class": "quanxian",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
+      "icon_id": "11997235",
+      "name": "用户",
+      "font_class": "yonghu",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "17856100",
+      "name": "密 码",
+      "font_class": "mima",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "17263785",
+      "name": "user",
+      "font_class": "Serviceusers",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "17722442",
+      "name": "放大镜",
+      "font_class": "fangdajing3",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "12071373",
+      "name": "我 的",
+      "font_class": "wode",
+      "unicode": "e674",
+      "unicode_decimal": 58996
+    },
+    {
+      "icon_id": "17843036",
+      "name": "icon-Chart",
+      "font_class": "icon-Chart",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
+      "icon_id": "17843037",
+      "name": "icon-Data center",
+      "font_class": "icon-Datacenter",
+      "unicode": "e695",
+      "unicode_decimal": 59029
+    },
+    {
+      "icon_id": "17843039",
+      "name": "icon-Dimension management",
+      "font_class": "icon-Dimensionmanagement",
+      "unicode": "e696",
+      "unicode_decimal": 59030
+    },
+    {
+      "icon_id": "17843047",
+      "name": "icon-Picture warehouse",
+      "font_class": "icon-Picturewarehouse",
+      "unicode": "e697",
+      "unicode_decimal": 59031
+    },
+    {
+      "icon_id": "481508",
+      "name": "刷新 终结版",
+      "font_class": "shuaxinzhongjieban",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "1833861",
+      "name": "右箭头",
+      "font_class": "youjiantou1",
+      "unicode": "e735",
+      "unicode_decimal": 59189
+    },
+    {
+      "icon_id": "1494660",
+      "name": "右箭头",
+      "font_class": "youjiantou",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "2038793",
+      "name": "购物车-23",
+      "font_class": "qicheqianlian-",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "1110411",
+      "name": "下箭头",
+      "font_class": "jiantou9",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "1221568",
+      "name": "时钟",
+      "font_class": "clock",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    }
+  ]
+}
